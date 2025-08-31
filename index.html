@@ -3,15 +3,170 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sentify — Digital Marketing & AI Chatbots</title>
-  <meta name="description" content="AI-powered digital marketing and chatbot solutions. Estonia ↔ GCC bridge: UAE, Saudi Arabia, Bahrain, Qatar."/>
+  <title>Sentify — Futuristic AI Marketing for GCC</title>
+  <meta name="description" content="AI-powered digital marketing and chatbot solutions for GCC market entry. Unlock the future of growth between Estonia and the Gulf region."/>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <!-- Sentifyd chatbot script -->
   <script type="module" src="https://frontend.sentifyd.io/sentifyd-bot/main.js"></script>
+  <style>
+    /* Futuristic dark theme & neon accents */
+    body {
+      background: linear-gradient(135deg, #0d1028 0%, #1b1f3a 100%);
+      color: #e0e6f6;
+      font-family: 'Inter', Arial, sans-serif;
+      margin: 0;
+    }
+    .accent {
+      color: #40ffd1;
+      font-family: 'Space Grotesk', 'Inter', Arial, sans-serif;
+      letter-spacing: 0.02em;
+      text-shadow: 0 0 6px #0ff, 0 0 20px #40ffd1;
+    }
+    .site-header, .site-footer {
+      background: rgba(20, 26, 54, 0.95);
+      border-bottom: 2px solid #0ff4;
+      box-shadow: 0 2px 16px #0ff2;
+    }
+    .btn, .btn--sm, .btn--ghost {
+      background: linear-gradient(90deg, #0ff 0%, #40ffd1 100%);
+      color: #181d2f;
+      border: none;
+      border-radius: 30px;
+      padding: 0.9em 2.2em;
+      font-weight: 700;
+      text-transform: uppercase;
+      box-shadow: 0 0 12px #40ffd180;
+      transition: background 0.2s, color 0.2s;
+    }
+    .btn--ghost {
+      background: transparent;
+      border: 2px solid #40ffd1;
+      color: #40ffd1;
+      box-shadow: none;
+    }
+    .btn:hover, .btn--ghost:hover {
+      background: #40ffd1;
+      color: #0b0e24;
+    }
+    .hero {
+      padding: 5em 0;
+      background: linear-gradient(120deg, #1d2340 60%, #102328 100%);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      left: 50%; top: -120px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, #40ffd1aa 0%, transparent 70%);
+      transform: translateX(-50%);
+      filter: blur(40px);
+      z-index: 0;
+    }
+    .hero h1 {
+      font-size: 2.8em;
+      font-family: 'Space Grotesk', 'Inter', Arial, sans-serif;
+      margin-bottom: 0.5em;
+      z-index: 1;
+      position: relative;
+    }
+    .hero .lede {
+      font-size: 1.3em;
+      color: #b6eaff;
+      max-width: 600px;
+      margin: 1.5em auto 2em;
+      z-index: 1;
+      position: relative;
+    }
+    .badges {
+      margin-top: 2em;
+      display: flex; justify-content: center; gap: 1.5em;
+      z-index: 1;
+      position: relative;
+    }
+    .badges span {
+      background: rgba(64,255,209,0.12);
+      border: 1px solid #40ffd1;
+      border-radius: 20px;
+      padding: 0.4em 1.1em;
+      font-size: 1em;
+      color: #40ffd1;
+      box-shadow: 0 0 8px #40ffd140;
+    }
+
+    /* Animated AI highlight section */
+    .ai-strengths {
+      background: linear-gradient(90deg, #112 60%, #202c43 100%);
+      padding: 5em 0 4em 0;
+      position: relative;
+      z-index: 1;
+    }
+    .ai-strengths h2 {
+      text-align: center;
+      font-size: 2.2em;
+      margin-bottom: 1.2em;
+      color: #40ffd1;
+      font-family: 'Space Grotesk', 'Inter', Arial, sans-serif;
+    }
+    .ai-cards {
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 2.5em;
+      margin: 0 auto; max-width: 1050px;
+    }
+    .ai-card {
+      background: rgba(20, 26, 54, 0.85);
+      border: 2px solid #40ffd1;
+      border-radius: 18px;
+      box-shadow: 0 0 22px #40ffd140;
+      padding: 2em 1.6em;
+      width: 300px;
+      min-height: 230px;
+      color: #fff;
+      text-align: center;
+      position: relative;
+      transition: transform 0.24s, box-shadow 0.24s;
+    }
+    .ai-card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 0 40px #40ffd1b0;
+    }
+    .ai-card .icon {
+      font-size: 2.6em;
+      margin-bottom: 0.6em;
+      color: #40ffd1;
+      filter: drop-shadow(0 0 5px #40ffd1);
+    }
+    .ai-card h3 {
+      font-family: 'Space Grotesk', 'Inter', Arial, sans-serif;
+      color: #40ffd1;
+      margin-bottom: 0.5em;
+      font-size: 1.2em;
+    }
+
+    /* Chatbot Embedding */
+    .panel .chatbot-embed {
+      border: 2px solid #40ffd1;
+      border-radius: 1em;
+      background: rgba(16, 35, 40, 0.45);
+      box-shadow: 0 0 18px #40ffd160;
+      padding: 1.4em 0.7em;
+      margin: 1em 0;
+      display: flex; justify-content: center;
+      z-index: 1;
+    }
+    .panel h3 {
+      color: #40ffd1;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 900px) {
+      .ai-cards { flex-direction: column; align-items: center;}
+      .ai-card { width: 98%; }
+    }
+  </style>
 </head>
 <body>
   <!-- Site Header / Navigation -->
@@ -24,6 +179,7 @@
       <label for="menu-toggle" class="hamburger" aria-label="Open Menu" tabindex="0" role="button" aria-controls="main-menu">☰</label>
       <nav id="main-menu" class="nav-links">
         <a href="#about">About</a>
+        <a href="#ai">AI Power</a>
         <a href="#services">Services</a>
         <a href="#partners">Our Story</a>
         <a href="#contact" class="btn btn--sm">Contact</a>
@@ -36,20 +192,47 @@
     <section class="hero" id="hero">
       <div class="container">
         <h1>
-          AI-Powered Digital Marketing<br />
-          <span class="accent">that opens GCC markets</span>
+          <span class="accent">AI-Driven Market Expansion</span><br />
+          For the GCC, from Estonia
         </h1>
         <p class="lede">
-          We help Estonian companies grow in the UAE, Saudi Arabia, Bahrain, and Qatar with high-performance marketing and AI chatbots.
+          Unleash next-gen Artificial Intelligence to unlock new growth in the UAE, Saudi Arabia, Bahrain, and Qatar. Market intelligence, cultural localization, and 24/7 engagement — all automated, all measurable.
         </p>
         <div class="cta">
-          <a href="#contact" class="btn">Talk to Us</a>
-          <a href="#services" class="btn btn--ghost">See Services</a>
+          <a href="#contact" class="btn">Talk to Our AI Team</a>
+          <a href="#ai" class="btn btn--ghost">How Our AI Works</a>
         </div>
         <div class="badges" aria-label="Core competencies">
-          <span>Estonia → GCC Bridge</span>
-          <span>Digital Marketing</span>
-          <span>AI Chatbots</span>
+          <span>Estonia ↔ GCC Bridge</span>
+          <span>AI-Driven Marketing</span>
+          <span>Smart Chatbots</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- AI Power Section -->
+    <section class="ai-strengths" id="ai">
+      <h2>How Our AI Accelerates Your GCC Success</h2>
+      <div class="ai-cards">
+        <div class="ai-card">
+          <div class="icon">🤖</div>
+          <h3>Market Intelligence</h3>
+          <p>AI scans GCC regional trends, predicts consumer behavior, and delivers actionable insights for rapid market fit.</p>
+        </div>
+        <div class="ai-card">
+          <div class="icon">🌐</div>
+          <h3>Localization & Language</h3>
+          <p>Multilingual AI adapts campaigns to local dialects and cultural nuance for every GCC country. True local voice, at scale.</p>
+        </div>
+        <div class="ai-card">
+          <div class="icon">⚡</div>
+          <h3>24/7 Smart Engagement</h3>
+          <p>AI chatbots convert, qualify, and support customers instantly — no sleep, no handover, just results.</p>
+        </div>
+        <div class="ai-card">
+          <div class="icon">📈</div>
+          <h3>Performance Optimization</h3>
+          <p>Continuous AI-powered optimization for campaigns — maximizing ROI with real-time learning and adaptation.</p>
         </div>
       </div>
     </section>
@@ -60,19 +243,16 @@
         <h2>What we do</h2>
         <div class="grid cards" role="list">
           <article class="card" role="listitem">
-            <!-- Removed invalid Marketing Icon image -->
             <h3>Digital Marketing</h3>
-            <p>Performance campaigns, SEO, and social growth tailored for GCC audiences. From strategy to execution.</p>
+            <p>AI-optimized campaigns, SEO, and social growth tailored for GCC audiences. From strategy to execution.</p>
           </article>
           <article class="card" role="listitem">
-            <!-- Removed invalid Chatbot Icon image -->
             <h3>AI Chatbots</h3>
             <p>Deploy Sentifyd.io chatbots to convert visitors, automate support, and scale conversations 24/7.</p>
           </article>
           <article class="card" role="listitem">
-            <!-- Removed invalid Bridge Icon image -->
             <h3>Market Entry</h3>
-            <p>Partner scouting, localization, and go-to-market for Estonia → UAE, Saudi Arabia, Bahrain, Qatar.</p>
+            <p>Partner scouting, localization, and go-to-market for Estonia → UAE, Saudi Arabia, Bahrain, Qatar — powered by AI insights.</p>
           </article>
         </div>
       </div>
@@ -109,14 +289,15 @@
           <div>
             <h2>Why Sentify</h2>
             <ul class="checks">
-              <li>Estonia ↔ GCC focus with boots-on-the-ground partners</li>
+              <li>AI-powered Estonia ↔ GCC market bridge</li>
               <li>Full-funnel marketing + AI automation</li>
               <li>Fast deployment, measurable results</li>
+              <li>Live AI advisor always on your side</li>
             </ul>
           </div>
           <div class="panel">
-            <h3>Live Chatbot Demo</h3>
-            <p>Chat with our Ahmad Hussein avatar:</p>
+            <h3>Try our AI Advisor now</h3>
+            <p>Chat with Ahmad Hussein, your AI-powered GCC market expert:</p>
             <!-- Sentifyd chatbot with Ahmad Hussein avatar -->
             <div class="chatbot-embed" aria-label="Chatbot Demo">
               <sentifyd-bot 
@@ -173,6 +354,7 @@
       </a>
       <div class="links" aria-label="Footer Links">
         <a href="#about">About</a>
+        <a href="#ai">AI Power</a>
         <a href="#services">Services</a>
         <a href="#partners">Our Story</a>
         <a href="#contact">Contact</a>
@@ -182,8 +364,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- Copyright year script -->
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
