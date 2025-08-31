@@ -1,92 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sentify Technology | AI-Powered Digital Marketing & Chatbots</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-    * { box-sizing: border-box; margin:0; padding:0; font-family: 'Inter', sans-serif; }
-    body { color:#333; line-height:1.6; scroll-behavior: smooth; }
-    nav { position: fixed; top:0; width:100%; background: rgba(255,255,255,0.95); padding: 10px 0; box-shadow:0 2px 5px rgba(0,0,0,0.1); z-index:1000; text-align:center; }
-    nav a { margin:0 20px; text-decoration:none; color:#283E51; font-weight:600; }
-    nav a:hover { color:#4B79A1; }
-    header { height: 100vh; background: url('https://images.unsplash.com/photo-1557682250-ff35f9baf81b?fit=crop&w=1400&q=80') center/cover no-repeat; display:flex; flex-direction: column; justify-content: center; align-items:center; text-align:center; color:#fff; }
-    header h1 { font-size:3rem; text-shadow:2px 2px 10px rgba(0,0,0,0.5); }
-    header p { font-size:1.2rem; margin-top:10px; text-shadow:1px 1px 5px rgba(0,0,0,0.5); }
-    section { padding: 80px 20px; max-width:1200px; margin:auto; }
-    section h2 { text-align:center; margin-bottom:50px; font-size:2rem; color:#283E51; }
-    .services { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; }
-    .service-box { flex:1 1 280px; background:#f4f4f4; padding:30px; border-radius:15px; text-align:center; transition: transform 0.3s, box-shadow 0.3s; }
-    .service-box:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
-    .service-box img { width:60px; margin-bottom:20px; }
-    .about-box { display:flex; flex-wrap:wrap; justify-content:space-around; gap:30px; }
-    .about-item { flex:1 1 300px; background:#e9f1f7; padding:25px; border-radius:12px; text-align:center; }
-    .chatbot-placeholder { border:2px dashed #4B79A1; padding:30px; border-radius:12px; text-align:center; }
-    .contact { text-align:center; }
-    footer { background:#283E51; color:#fff; text-align:center; padding:20px; margin-top:50px; }
-    a { color:#4B79A1; text-decoration:none; }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sentify Technology — Digital Marketing & AI Chatbots</title>
+  <meta name="description" content="AI-powered digital marketing and chatbot solutions. Estonia ↔ GCC bridge: UAE, Saudi Arabia, Bahrain."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 </head>
 <body>
-
-<nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#chatbot">Chatbot</a>
-    <a href="#contact">Contact</a>
-</nav>
-
-<header>
-    <h1>Sentify Technology</h1>
-    <p>AI-Powered Digital Marketing & Chatbots for International Growth</p>
-</header>
-
-<section id="about">
-    <h2>About Us</h2>
-    <div class="about-box">
-        <div class="about-item">
-            <h3>Reach Plus Media</h3>
-            <p>Bahrain-based digital marketing experts helping companies grow and expand internationally.</p>
-        </div>
-        <div class="about-item">
-            <h3>Sentifyd.io</h3>
-            <p>Finland-based AI chatbot solutions for automating customer support and engagement.</p>
-        </div>
+  <header class="site-header">
+    <div class="container nav">
+      <div class="brand">
+        <img src="assets/logo.svg" alt="Sentify Technology" class="logo"/>
+        <span>Sentify Technology</span>
+      </div>
+      <input type="checkbox" id="menu-toggle">
+      <label for="menu-toggle" class="hamburger" aria-label="Toggle Menu">☰</label>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#partners">Our Story</a>
+        <a href="#contact" class="btn btn--sm">Contact</a>
+      </nav>
     </div>
-</section>
+  </header>
 
-<section id="services">
-    <h2>Our Services</h2>
-    <div class="services">
-        <div class="service-box">
-            <img src="https://img.icons8.com/ios-filled/100/000000/marketing.png" alt="Digital Marketing Icon"/>
-            <h3>Digital Marketing</h3>
-            <p>Social media, SEO, online advertising, and international market strategies for GCC expansion.</p>
-        </div>
-        <div class="service-box">
-            <img src="https://img.icons8.com/ios-filled/100/000000/artificial-intelligence.png" alt="AI Chatbot Icon"/>
-            <h3>AI Chatbots</h3>
-            <p>Custom AI chatbots from Sentifyd.io to automate customer support and increase engagement.</p>
-        </div>
+  <section class="hero">
+    <div class="container">
+      <h1>AI‑Powered Digital Marketing<br/><span class="accent">that opens GCC markets</span></h1>
+      <p class="lede">We help Estonian companies grow in the UAE, Saudi Arabia, and Bahrain with high‑performance marketing and AI chatbots.</p>
+      <div class="cta">
+        <a href="#contact" class="btn">Talk to Us</a>
+        <a href="#services" class="btn btn--ghost">See Services</a>
+      </div>
+      <div class="badges">
+        <span>Estonia → GCC Bridge</span>
+        <span>Digital Marketing</span>
+        <span>AI Chatbots</span>
+      </div>
     </div>
-</section>
+  </section>
 
-<section id="chatbot">
-    <h2>Chat with Us</h2>
-    <div class="chatbot-placeholder">
-        <!-- Paste your Sentifyd embed code here -->
-        <p>Your AI Chatbot will appear here.</p>
+  <section id="services" class="section">
+    <div class="container">
+      <h2>What we do</h2>
+      <div class="grid cards">
+        <div class="card">
+          <img src="assets/icon-marketing.svg" alt="" class="icon"/>
+          <h3>Digital Marketing</h3>
+          <p>Performance campaigns, SEO, and social growth tailored for GCC audiences. From strategy to execution.</p>
+        </div>
+        <div class="card">
+          <img src="assets/icon-chatbot.svg" alt="" class="icon"/>
+          <h3>AI Chatbots</h3>
+          <p>Deploy Sentifyd.io chatbots to convert visitors, automate support, and scale conversations 24/7.</p>
+        </div>
+        <div class="card">
+          <img src="assets/icon-bridge.svg" alt="" class="icon"/>
+          <h3>Market Entry</h3>
+          <p>Partner scouting, localization, and go‑to‑market for Estonia → UAE, Saudi Arabia, Bahrain.</p>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
 
-<section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:info@sentifytech.com">info@sentifytech.com</a></p>
-</section>
+  <section id="partners" class="section section--alt">
+    <div class="container">
+      <h2>Two teams. One mission.</h2>
+      <div class="grid split">
+        <div>
+          <h3>Reach Plus Media (Bahrain)</h3>
+          <p>Digital marketing specialists with regional know‑how and execution in the GCC.</p>
+        </div>
+        <div>
+          <h3>Sentifyd.io (Finland)</h3>
+          <p>AI chatbot technology powering instant, multilingual customer conversations.</p>
+        </div>
+      </div>
+      <p class="center note">Together as <strong>Sentify Technology OÜ</strong> in Estonia to boost exports and growth.</p>
+    </div>
+  </section>
 
-<footer>
-    <p>&copy; 2025 Sentify Technology. All rights reserved.</p>
-</footer>
+  <section id="about" class="section">
+    <div class="container">
+      <div class="grid about">
+        <div>
+          <h2>Why Sentify</h2>
+          <ul class="checks">
+            <li>Estonia ↔ GCC focus with boots‑on‑the‑ground partners</li>
+            <li>Full‑funnel marketing + AI automation</li>
+            <li>Fast deployment, measurable results</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h3>Live Chatbot Demo</h3>
+          <p>Paste your Sentifyd embed below to enable the demo on this page.</p>
+          <div class="embed">
+            <!-- 🔽 Paste your Sentifyd embed code below (kept in its own container) -->
+            <!-- Example:
+            <script src="https://sentifyd.io/embed.js" data-bot-id="YOUR-BOT-ID"></script>
+            -->
+            <p class="placeholder">Chatbot will render here after you paste the embed code.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-</body
+  <section id="contact" class="section section--alt">
+    <div class="container">
+      <h2>Contact</h2>
+      <div class="grid split">
+        <div>
+          <p><strong>Email:</strong> <a href="mailto:info@sentifytech.com">info@sentifytech.com</a></p>
+          <p><strong>Based in:</strong> Tallinn, Estonia</p>
+          <p><strong>Serving:</strong> Estonia, UAE, Saudi Arabia, Bahrain</p>
+        </div>
+        <form class="form" name="contact" netlify>
+          <input type="hidden" name="form-name" value="contact">
+          <label>Full name
+            <input type="text" name="name" required>
+          </label>
+          <label>Email
+            <input type="email" name="email" required>
+          </label>
+          <label>Message
+            <textarea name="message" rows="4" required></textarea>
+          </label>
+          <button class="btn" type="submit">Send</button>
+          <p class="form-hint">This form is Netlify-ready. Submissions will appear in your Netlify dashboard.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="brand">
+        <img src="assets/logo.svg" alt="" class="logo"/>
+        <span>Sentify Technology</span>
+      </div>
+      <div class="links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#partners">Our Story</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="small">© <span id="y"></span> Sentify Technology OÜ</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
