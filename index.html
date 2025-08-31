@@ -5,184 +5,452 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sentify — Futuristic AI Marketing for GCC</title>
   <meta name="description" content="AI-powered digital marketing and chatbot solutions for GCC market entry. Unlock the future of growth between Estonia and the Gulf region."/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <!-- Fonts: Inter + Space Grotesk + Amiri for Arabic style -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Space+Grotesk:wght@700&family=Amiri:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <script type="module" src="https://frontend.sentifyd.io/sentifyd-bot/main.js"></script>
   <style>
-    /* Futuristic dark theme & neon accents */
-    body {
-      background: linear-gradient(135deg, #0d1028 0%, #1b1f3a 100%);
-      color: #e0e6f6;
-      font-family: 'Inter', Arial, sans-serif;
-      margin: 0;
+    :root {
+      --color-bg: #f8fafc;
+      --color-bg-alt: #f1f8fb;
+      --color-primary: #1bb3a4;
+      --color-accent: #ffe082;
+      --color-heading: #232740;
+      --color-text: #3c4961;
+      --color-arabic: #1779cf;
+      --color-shadow: rgba(27, 179, 164, 0.07);
     }
-    .accent {
-      color: #40ffd1;
-      font-family: 'Space Grotesk', 'Inter', Arial, sans-serif;
-      letter-spacing: 0.02em;
-      text-shadow: 0 0 6px #0ff, 0 0 20px #40ffd1;
+    html {
+      background: var(--color-bg);
+      color: var(--color-text);
+      font-family: 'Inter', Arial, sans-serif;
+      font-size: 18px;
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      background: var(--color-bg);
+      min-height: 100vh;
     }
     .site-header, .site-footer {
-      background: rgba(20, 26, 54, 0.95);
-      border-bottom: 2px solid #0ff4;
-      box-shadow: 0 2px 16px #0ff2;
+      background: var(--color-bg-alt);
+      box-shadow: 0 1px 16px var(--color-shadow);
     }
-    .btn, .btn--sm, .btn--ghost {
-      background: linear-gradient(90deg, #0ff 0%, #40ffd1 100%);
-      color: #181d2f;
+    .site-header {
+      padding: 1.1em 0 0.8em 0;
+      border-bottom: 2px solid var(--color-primary);
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5em;
+    }
+    .brand img {
+      height: 52px;
+      width: auto;
+      vertical-align: middle;
+      filter: drop-shadow(0 2px 12px #1bb3a420);
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1.7em;
+      font-weight: 600;
+    }
+    .nav-links a {
+      color: var(--color-heading);
+      text-decoration: none;
+      transition: color 0.16s;
+      letter-spacing: 0.01em;
+    }
+    .nav-links a.btn {
+      background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+      border-radius: 24px;
+      color: #fff;
+      padding: 0.5em 1.7em;
+      box-shadow: 0 2px 12px #ffe08233;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+      border: none;
+    }
+    .nav-links a.btn:hover {
+      color: var(--color-primary);
+      background: #fff8e1;
+      border: 1px solid var(--color-primary);
+    }
+
+    /* Hero with Estonia->GCC visual */
+    .hero {
+      background: linear-gradient(110deg, #f8fafc 70%, #e9f6f8 100%);
+      padding: 4.8em 0 3em 0;
+      text-align: center;
+      position: relative;
+    }
+    .hero h1 {
+      font-family: 'Space Grotesk', 'Inter', Arial, sans-serif;
+      font-size: 2.7em;
+      color: var(--color-primary);
+      margin-bottom: 0.3em;
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      line-height: 1.1;
+      text-shadow: 0 2px 24px #1bb3a420;
+    }
+    .hero .lede {
+      font-size: 1.19em;
+      color: #294d53;
+      max-width: 600px;
+      margin: 1.4em auto 2.3em;
+    }
+    .cta {
+      margin-bottom: 2.3em;
+      display: flex;
+      justify-content: center;
+      gap: 1.3em;
+    }
+    .btn {
+      background: linear-gradient(90deg, var(--color-primary) 60%, var(--color-accent) 100%);
+      color: #fff;
       border: none;
       border-radius: 30px;
-      padding: 0.9em 2.2em;
+      padding: 0.95em 2.2em;
       font-weight: 700;
       text-transform: uppercase;
-      box-shadow: 0 0 12px #40ffd180;
-      transition: background 0.2s, color 0.2s;
+      box-shadow: 0 0 12px #ffe08255;
+      transition: background 0.18s, color 0.18s;
+      font-size: 1em;
+      cursor: pointer;
+      letter-spacing: 0.04em;
     }
     .btn--ghost {
       background: transparent;
-      border: 2px solid #40ffd1;
-      color: #40ffd1;
+      border: 2px solid var(--color-primary);
+      color: var(--color-primary);
       box-shadow: none;
     }
     .btn:hover, .btn--ghost:hover {
-      background: #40ffd1;
-      color: #0b0e24;
+      background: #fff8e1;
+      color: var(--color-primary);
     }
-    .hero {
-      padding: 5em 0;
-      background: linear-gradient(120deg, #1d2340 60%, #102328 100%);
+    /* Estonia to GCC transform visual */
+    .hero-visual {
+      margin: 0 auto 2.5em auto;
+      max-width: 480px;
+      position: relative;
       text-align: center;
-      position: relative;
-      overflow: hidden;
+      min-height: 140px;
     }
-    .hero::before {
-      content: '';
-      position: absolute;
-      left: 50%; top: -120px;
-      width: 400px; height: 400px;
-      background: radial-gradient(circle, #40ffd1aa 0%, transparent 70%);
-      transform: translateX(-50%);
-      filter: blur(40px);
-      z-index: 0;
+    .transform-img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.2em;
+      margin-top: 1.3em;
     }
-    .hero h1 {
-      font-size: 2.8em;
-      font-family: 'Space Grotesk', 'Inter', Arial, sans-serif;
-      margin-bottom: 0.5em;
-      z-index: 1;
-      position: relative;
+    .estonian {
+      font-family: 'Space Grotesk', Arial, sans-serif;
+      font-size: 2.1em;
+      color: #222;
+      background: #fff;
+      padding: 0.2em 0.9em;
+      border-radius: 9px;
+      box-shadow: 0 1px 12px #1bb3a422;
+      transition: box-shadow 0.2s;
     }
-    .hero .lede {
-      font-size: 1.3em;
-      color: #b6eaff;
-      max-width: 600px;
-      margin: 1.5em auto 2em;
-      z-index: 1;
-      position: relative;
+    .arrow {
+      font-size: 1.7em;
+      color: var(--color-primary);
+      font-weight: 700;
+      margin: 0 0.6em;
     }
+    .arabic {
+      font-family: 'Amiri', serif;
+      font-size: 2.1em;
+      color: var(--color-arabic);
+      background: #f2f9ff;
+      padding: 0.2em 1.1em;
+      border-radius: 9px;
+      border: 1.5px solid var(--color-arabic);
+      box-shadow: 0 2px 16px #1779cf33;
+      direction: rtl;
+      display: inline-block;
+      letter-spacing: 0.04em;
+      transition: box-shadow 0.2s, border 0.2s;
+    }
+    /* Badges */
     .badges {
-      margin-top: 2em;
-      display: flex; justify-content: center; gap: 1.5em;
-      z-index: 1;
-      position: relative;
+      margin-top: 1.8em;
+      display: flex; justify-content: center; gap: 1.3em;
+      flex-wrap: wrap;
     }
     .badges span {
-      background: rgba(64,255,209,0.12);
-      border: 1px solid #40ffd1;
-      border-radius: 20px;
-      padding: 0.4em 1.1em;
+      background: linear-gradient(90deg, #eaf8f1 50%, #fffde4 100%);
+      border: 1.5px solid #cbeee8;
+      border-radius: 22px;
+      padding: 0.4em 1.2em;
       font-size: 1em;
-      color: #40ffd1;
-      box-shadow: 0 0 8px #40ffd140;
+      color: #1bb3a4;
+      font-weight: 600;
+      box-shadow: 0 0 8px #ffe08222;
+      letter-spacing: 0.01em;
     }
 
-    /* Animated AI highlight section */
-    .ai-strengths {
-      background: linear-gradient(90deg, #112 60%, #202c43 100%);
-      padding: 5em 0 4em 0;
-      position: relative;
-      z-index: 1;
-    }
-    .ai-strengths h2 {
-      text-align: center;
-      font-size: 2.2em;
-      margin-bottom: 1.2em;
-      color: #40ffd1;
+    /* Section titles */
+    h2 {
       font-family: 'Space Grotesk', 'Inter', Arial, sans-serif;
+      color: var(--color-heading);
+      font-size: 2em;
+      margin-top: 0.2em;
+      margin-bottom: 0.8em;
+      text-align: center;
+      letter-spacing: 0.01em;
     }
+    section.section {
+      background: var(--color-bg-alt);
+      padding: 3.5em 0 2.8em 0;
+      margin-top: 1.7em;
+    }
+    section.section--alt {
+      background: #fffbe6;
+    }
+
+    /* AI Strengths */
     .ai-cards {
-      display: flex; flex-wrap: wrap; justify-content: center; gap: 2.5em;
+      display: flex; flex-wrap: wrap; justify-content: center; gap: 2.2em;
       margin: 0 auto; max-width: 1050px;
     }
     .ai-card {
-      background: rgba(20, 26, 54, 0.85);
-      border: 2px solid #40ffd1;
+      background: #fff;
+      border: 1.5px solid #e3f6f1;
       border-radius: 18px;
-      box-shadow: 0 0 22px #40ffd140;
-      padding: 2em 1.6em;
-      width: 300px;
-      min-height: 230px;
-      color: #fff;
+      box-shadow: 0 4px 40px #1bb3a410;
+      padding: 2.2em 1.6em;
+      width: 295px;
+      min-height: 210px;
+      color: var(--color-text);
       text-align: center;
+      transition: transform 0.21s, box-shadow 0.21s;
       position: relative;
-      transition: transform 0.24s, box-shadow 0.24s;
     }
     .ai-card:hover {
-      transform: translateY(-10px) scale(1.03);
-      box-shadow: 0 0 40px #40ffd1b0;
+      transform: translateY(-8px) scale(1.04);
+      box-shadow: 0 10px 40px #ffe08299;
     }
     .ai-card .icon {
-      font-size: 2.6em;
+      font-size: 2.5em;
       margin-bottom: 0.6em;
-      color: #40ffd1;
-      filter: drop-shadow(0 0 5px #40ffd1);
+      color: var(--color-primary);
+      filter: drop-shadow(0 0 7px #1bb3a420);
     }
     .ai-card h3 {
       font-family: 'Space Grotesk', 'Inter', Arial, sans-serif;
-      color: #40ffd1;
+      color: var(--color-primary);
+      margin-bottom: 0.6em;
+      font-size: 1.15em;
+      font-weight: 700;
+    }
+
+    /* Services grid */
+    .grid.cards, .grid.split {
+      display: flex;
+      gap: 2em;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .card {
+      background: #fff;
+      box-shadow: 0 2px 12px #1bb3a410;
+      border-radius: 12px;
+      padding: 1.7em 1.4em;
+      min-width: 230px;
+      max-width: 320px;
+      flex: 1 1 240px;
+      transition: box-shadow 0.2s;
+    }
+    .card h3 {
+      color: var(--color-primary);
       margin-bottom: 0.5em;
-      font-size: 1.2em;
+      font-family: 'Space Grotesk', 'Inter', Arial, sans-serif;
+      font-size: 1.1em;
+    }
+    .card:hover {
+      box-shadow: 0 6px 32px #ffe08233;
+    }
+
+    /* About/Partners */
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2em;
+      align-items: flex-start;
+      justify-content: center;
+    }
+    .about > div {
+      flex: 1 1 330px;
+      min-width: 270px;
+      max-width: 440px;
+    }
+    .checks {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .checks li {
+      margin-bottom: 1.1em;
+      padding-left: 1.6em;
+      position: relative;
+      font-size: 1.08em;
+    }
+    .checks li::before {
+      content: "✓";
+      color: var(--color-primary);
+      font-weight: 800;
+      position: absolute;
+      left: 0;
+      font-size: 1.1em;
+    }
+    .panel {
+      background: #f6faff;
+      border: 1.5px solid #e3f6f1;
+      border-radius: 1em;
+      box-shadow: 0 0 18px #1bb3a411;
+      padding: 1.7em 1.2em;
+      margin: 1em 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .panel h3 {
+      color: var(--color-primary);
     }
 
     /* Chatbot Embedding */
-    .panel .chatbot-embed {
-      border: 2px solid #40ffd1;
+    .chatbot-embed {
+      border: 1.5px solid #ffe082;
       border-radius: 1em;
-      background: rgba(16, 35, 40, 0.45);
-      box-shadow: 0 0 18px #40ffd160;
-      padding: 1.4em 0.7em;
+      background: #fffef8;
+      box-shadow: 0 0 10px #ffe08233;
+      padding: 1.2em 0.7em;
       margin: 1em 0;
       display: flex; justify-content: center;
       z-index: 1;
     }
-    .panel h3 {
-      color: #40ffd1;
+
+    /* Contact form */
+    form.form {
+      background: #fff;
+      border-radius: 1em;
+      box-shadow: 0 2px 12px #ffe08222;
+      padding: 1.7em 1.2em;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      min-width: 250px;
+      max-width: 370px;
     }
-    /* Responsive adjustments */
+    form.form label {
+      display: flex;
+      flex-direction: column;
+      font-weight: 600;
+      color: var(--color-primary);
+      margin-bottom: 0.4em;
+      font-size: 1em;
+    }
+    form.form input,
+    form.form textarea {
+      border: 1.4px solid #cbeee8;
+      border-radius: 6px;
+      padding: 0.7em;
+      font-size: 1em;
+      margin-top: 0.2em;
+      font-family: inherit;
+      color: var(--color-text);
+      background: #f3f8fa;
+      transition: border 0.18s;
+    }
+    form.form input:focus,
+    form.form textarea:focus {
+      outline: none;
+      border: 1.4px solid var(--color-primary);
+    }
+    form.form button {
+      margin-top: 0.8em;
+    }
+    .form-hint {
+      font-size: 0.88em;
+      color: #888;
+    }
+    /* Footer */
+    .site-footer {
+      margin-top: 2em;
+      padding: 1.8em 0 1em 0;
+      border-top: 2px solid var(--color-primary);
+      color: #888;
+      font-size: 0.97em;
+    }
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.7em;
+    }
+    .footer-grid .links a {
+      margin-right: 1.1em;
+      color: var(--color-primary);
+      font-weight: 600;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+    .footer-grid .links a:hover {
+      text-decoration: underline;
+      color: #1779cf;
+    }
+    .footer-grid .small {
+      margin-top: 0.4em;
+      color: #aaa;
+    }
+    /* Responsive */
     @media (max-width: 900px) {
-      .ai-cards { flex-direction: column; align-items: center;}
-      .ai-card { width: 98%; }
+      .ai-cards, .grid.cards, .grid.split, .about { flex-direction: column; align-items: center;}
+      .ai-card, .card { width: 99%; }
+      .about > div { max-width: 99vw;}
+      .container { padding: 0 0.6em;}
+      .footer-grid { flex-direction: column; gap: 1em;}
+    }
+    /* Geometric pattern header accent */
+    .pattern-bar {
+      background: repeating-linear-gradient(135deg,
+        #e9f6f8, #e9f6f8 16px,
+        #ffe082 18px, #ffe082 22px,
+        #e9f6f8 24px, #e9f6f8 32px);
+      height: 6px;
+      border-radius: 3px;
+      margin-bottom: 0.9em;
+      box-shadow: 0 2px 8px #ffe08233;
     }
   </style>
 </head>
 <body>
   <!-- Site Header / Navigation -->
   <header class="site-header">
+    <div class="pattern-bar"></div>
     <div class="container nav" role="navigation" aria-label="Main Navigation">
       <a href="#hero" class="brand" aria-label="Sentifytech Home">
-        <img src="logo.png" alt="Sentify Technology Logo" width="200" loading="lazy">
+        <img src="logo.png" alt="Sentify Technology Logo" loading="lazy">
       </a>
-      <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Open Menu">
-      <label for="menu-toggle" class="hamburger" aria-label="Open Menu" tabindex="0" role="button" aria-controls="main-menu">☰</label>
-      <nav id="main-menu" class="nav-links">
+      <nav class="nav-links" id="main-menu">
         <a href="#about">About</a>
         <a href="#ai">AI Power</a>
         <a href="#services">Services</a>
         <a href="#partners">Our Story</a>
-        <a href="#contact" class="btn btn--sm">Contact</a>
+        <a href="#contact" class="btn">Contact</a>
       </nav>
     </div>
   </header>
@@ -192,12 +460,23 @@
     <section class="hero" id="hero">
       <div class="container">
         <h1>
-          <span class="accent">AI-Driven Market Expansion</span><br />
-          For the GCC, from Estonia
+          AI-Driven Market Expansion<br>
+          <span style="color:var(--color-accent);font-weight:800;">From Estonia to the Middle East</span>
         </h1>
         <p class="lede">
-          Unleash next-gen Artificial Intelligence to unlock new growth in the UAE, Saudi Arabia, Bahrain, and Qatar. Market intelligence, cultural localization, and 24/7 engagement — all automated, all measurable.
+          Unlock GCC growth with <strong>futuristic AI marketing</strong>, digital campaigns, and multilingual chatbots.<br>
+          We connect Estonian innovation with the <span style="color:var(--color-arabic);font-family:'Amiri',serif;">مستقبل الخليج</span> (the Gulf's future).
         </p>
+        <div class="hero-visual" aria-label="Estonian to Arabic transformation visual">
+          <div class="transform-img">
+            <span class="estonian">Tere tulemast</span>
+            <span class="arrow">→</span>
+            <span class="arabic">مرحبا بكم</span>
+          </div>
+          <div style="margin:1.2em auto 0;font-size:1em;color:#6b6b8b;max-width:360px;">
+            <em>Estonian products, reborn for the GCC — Even the words transform.</em>
+          </div>
+        </div>
         <div class="cta">
           <a href="#contact" class="btn">Talk to Our AI Team</a>
           <a href="#ai" class="btn btn--ghost">How Our AI Works</a>
@@ -205,40 +484,40 @@
         <div class="badges" aria-label="Core competencies">
           <span>Estonia ↔ GCC Bridge</span>
           <span>AI-Driven Marketing</span>
-          <span>Smart Chatbots</span>
+          <span>Multilingual Chatbots</span>
         </div>
       </div>
     </section>
 
     <!-- AI Power Section -->
-    <section class="ai-strengths" id="ai">
+    <section class="section" id="ai">
       <h2>How Our AI Accelerates Your GCC Success</h2>
       <div class="ai-cards">
         <div class="ai-card">
-          <div class="icon">🤖</div>
+          <div class="icon">📊</div>
           <h3>Market Intelligence</h3>
-          <p>AI scans GCC regional trends, predicts consumer behavior, and delivers actionable insights for rapid market fit.</p>
+          <p>AI scans GCC trends, predicts consumer behavior, and delivers actionable insights for rapid market fit.</p>
         </div>
         <div class="ai-card">
           <div class="icon">🌐</div>
           <h3>Localization & Language</h3>
-          <p>Multilingual AI adapts campaigns to local dialects and cultural nuance for every GCC country. True local voice, at scale.</p>
+          <p>Multilingual AI adapts campaigns to local dialects and cultural nuance for every GCC country.</p>
+        </div>
+        <div class="ai-card">
+          <div class="icon">🤖</div>
+          <h3>24/7 Smart Engagement</h3>
+          <p>AI chatbots convert, qualify, and support customers instantly — always on, always local.</p>
         </div>
         <div class="ai-card">
           <div class="icon">⚡</div>
-          <h3>24/7 Smart Engagement</h3>
-          <p>AI chatbots convert, qualify, and support customers instantly — no sleep, no handover, just results.</p>
-        </div>
-        <div class="ai-card">
-          <div class="icon">📈</div>
           <h3>Performance Optimization</h3>
-          <p>Continuous AI-powered optimization for campaigns — maximizing ROI with real-time learning and adaptation.</p>
+          <p>Continuous AI-powered optimization for campaigns — maximizing ROI with real-time learning.</p>
         </div>
       </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="section">
+    <section id="services" class="section section--alt">
       <div class="container">
         <h2>What we do</h2>
         <div class="grid cards" role="list">
@@ -252,40 +531,40 @@
           </article>
           <article class="card" role="listitem">
             <h3>Market Entry</h3>
-            <p>Partner scouting, localization, and go-to-market for Estonia → UAE, Saudi Arabia, Bahrain, Qatar — powered by AI insights.</p>
+            <p>Partner scouting, localization, and go-to-market for Estonia → GCC — powered by AI insights.</p>
           </article>
         </div>
       </div>
     </section>
 
     <!-- Partners Section -->
-    <section id="partners" class="section section--alt">
+    <section id="partners" class="section">
       <div class="container">
         <h2>Two teams. One mission.</h2>
         <div class="grid split">
           <div>
             <h3>
-              <a href="https://reachplusbh.com/index.html" target="_blank" rel="noopener">Reach Plus Media</a>
+              <a href="https://reachplusbh.com/index.html" target="_blank" rel="noopener" style="color:var(--color-primary)">Reach Plus Media</a>
             </h3>
             <p>Digital marketing specialists with regional know-how and execution in the GCC.</p>
           </div>
           <div>
             <h3>
-              <a href="https://sentifyd.io" target="_blank" rel="noopener">Sentifyd.io</a>
+              <a href="https://sentifyd.io" target="_blank" rel="noopener" style="color:var(--color-primary)">Sentifyd.io</a>
             </h3>
             <p>AI chatbot technology powering instant, multilingual customer conversations.</p>
           </div>
         </div>
-        <p class="center note">
+        <p class="center note" style="text-align:center;margin-top:1.3em;">
           Together as <strong>Sentify Technology OÜ</strong> in Estonia to boost exports and growth.
         </p>
       </div>
     </section>
 
     <!-- About Section with Chatbot Demo -->
-    <section id="about" class="section">
+    <section id="about" class="section section--alt">
       <div class="container">
-        <div class="grid about">
+        <div class="about">
           <div>
             <h2>Why Sentify</h2>
             <ul class="checks">
@@ -298,7 +577,6 @@
           <div class="panel">
             <h3>Try our AI Advisor now</h3>
             <p>Chat with Ahmad Hussein, your AI-powered GCC market expert:</p>
-            <!-- Sentifyd chatbot with Ahmad Hussein avatar -->
             <div class="chatbot-embed" aria-label="Chatbot Demo">
               <sentifyd-bot 
                 api_key="36ebbcf7-c3ae-493f-a77a-5b8a51ed5033" 
@@ -315,7 +593,7 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section section--alt">
+    <section id="contact" class="section">
       <div class="container">
         <h2>Contact</h2>
         <div class="grid split">
@@ -350,7 +628,7 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <a href="#hero" class="brand" aria-label="Sentifytech Home">
-        <img src="logo.png" alt="Sentify Technology Logo" width="200" loading="lazy">
+        <img src="logo.png" alt="Sentify Technology Logo" loading="lazy">
       </a>
       <div class="links" aria-label="Footer Links">
         <a href="#about">About</a>
