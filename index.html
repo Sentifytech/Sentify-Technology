@@ -10,13 +10,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <!-- Sentifyd chatbot script should be loaded only once in the head -->
+  <script type="module" src="https://frontend.sentifyd.io/sentifyd-bot/main.js"></script>
 </head>
 <body>
   <header class="site-header">
     <div class="container nav">
       <div class="brand">
         <img src="logo.png" alt="Sentifytech Logo" width="200">
-      
       </div>
       <input type="checkbox" id="menu-toggle">
       <label for="menu-toggle" class="hamburger" aria-label="Toggle Menu">☰</label>
@@ -96,21 +97,22 @@
             <li>Fast deployment, measurable results</li>
           </ul>
         </div>
-        
-       <div class="panel">
-  <h3>Live Chatbot Demo</h3>
-  <p>Chat with our Ahmad Hussein avatar:</p>
-  <div class="embed">
-    <!-- Sentifyd chatbot with Ahmad Hussein avatar -->
-    <script type="module" src="https://frontend.sentifyd.io/sentifyd-bot/main.js"></script> 
-    <sentifyd-bot 
-        api_key="36ebbcf7-c3ae-493f-a77a-5b8a51ed5033" 
-        avatar_id="51" 
-        toggler="false">
-    </sentifyd-bot>
-  </div>
-</div> <!-- close panel -->
-        
+        <div class="panel">
+          <h3>Live Chatbot Demo</h3>
+          <p>Chat with our Ahmad Hussein avatar:</p>
+          <div class="embed">
+            <!-- Sentifyd chatbot with Ahmad Hussein avatar -->
+            <sentifyd-bot 
+              api_key="36ebbcf7-c3ae-493f-a77a-5b8a51ed5033" 
+              avatar_id="51" 
+              toggler="false">
+            </sentifyd-bot>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section id="contact" class="section section--alt">
     <div class="container">
       <h2>Contact</h2>
@@ -157,3 +159,4 @@
     document.getElementById('y').textContent = new Date().getFullYear();
   </script>
 </body>
+</html>
