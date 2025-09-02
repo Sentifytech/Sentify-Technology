@@ -21,6 +21,9 @@ img{max-width:100%;display:block}
 .site-header .nav{display:flex;align-items:center;justify-content:space-between;height:64px;position:relative;gap:20px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:700}
 .logo{width:28px;height:28px}
+
+/* Subtle gradient pill behind header logo to reflect AI/startup theme */
+.site-header .brand img{background:linear-gradient(135deg, rgba(79,70,229,.08), rgba(6,182,212,.08));padding:6px 10px;border-radius:12px;box-shadow:0 6px 18px rgba(79,70,229,.12), inset 0 0 0 1px #e5e7eb}
 .site-header .brand img{height:40px;width:auto}
 .site-footer .brand img{width:160px;height:auto}
 
@@ -58,6 +61,14 @@ filter:saturate(1.08) blur(1px);animation:heroFlow 22s ease-in-out infinite alte
 .badges span{font-size:12px;background:#eef2ff;color:#3730a3;border:1px solid #c7d2fe;padding:6px 10px;border-radius:999px}
 
 .section{padding:64px 0}
+
+/* AI growth background for Services section */
+#services{position:relative;overflow:hidden}
+#services::before{content:"";position:absolute;inset:-20% -10% 50% -10%;background:
+  radial-gradient(520px 240px at 92% 6%, rgba(79,70,229,.10), transparent 60%),
+  radial-gradient(520px 240px at 8% -4%, rgba(6,182,212,.10), transparent 60%),
+  linear-gradient(to bottom, rgba(255,255,255,0), rgba(248,250,252,1));
+pointer-events:none}
 .section--alt{background:#f8fafc}
 h2{font-size:30px;margin:0 0 26px;text-align:center}
 .grid{display:grid;gap:22px}
