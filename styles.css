@@ -63,6 +63,8 @@ h2{font-size:30px;margin:0 0 26px;text-align:center}
 .panel{background:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:18px}
 .embed{min-height:180px;border:2px dashed #cbd5e1;border-radius:12px;display:flex;align-items:center;justify-content:center;padding:16px}
 .placeholder{color:#64748b;font-size:14px}
+.chatbot-fallback{display:none;color:#64748b;font-size:14px;margin-top:8px}
+:root[data-chatbot-disabled="true"] .chatbot-fallback{display:block}
 
 .form{display:grid;gap:10px}
 .form input,.form textarea{width:100%;border:1px solid #cbd5e1;border-radius:10px;padding:10px;font-size:14px}
