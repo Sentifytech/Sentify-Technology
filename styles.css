@@ -18,9 +18,13 @@ img{max-width:100%;display:block}
 .container{max-width:1120px;margin:0 auto;padding:0 20px}
 
 .site-header{position:sticky;top:0;background:rgba(255,255,255,.9);backdrop-filter:saturate(140%) blur(6px);border-bottom:1px solid #eef2f7;z-index:1000}
-.site-header .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.site-header .nav{display:flex;align-items:center;justify-content:space-between;height:64px;position:relative;gap:20px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:700}
 .logo{width:28px;height:28px}
+
+.nav-col{display:flex;align-items:center}
+.brand-col{flex:1}
+.menu-col{flex:1;justify-content:flex-end;position:relative}
 
 nav a{margin:0 12px;font-weight:600;color:#0f172a}
 .btn{display:inline-block;background:linear-gradient(135deg,var(--brand1),var(--brand2));color:white;padding:12px 18px;border-radius:10px;font-weight:700;box-shadow:0 6px 18px rgba(79,70,229,.25);transition:transform .12s ease}
@@ -59,6 +63,8 @@ h2{font-size:30px;margin:0 0 26px;text-align:center}
 .panel{background:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:18px}
 .embed{min-height:180px;border:2px dashed #cbd5e1;border-radius:12px;display:flex;align-items:center;justify-content:center;padding:16px}
 .placeholder{color:#64748b;font-size:14px}
+.chatbot-fallback{display:none;color:#64748b;font-size:14px;margin-top:8px}
+:root[data-chatbot-disabled="true"] .chatbot-fallback{display:block}
 
 .form{display:grid;gap:10px}
 .form input,.form textarea{width:100%;border:1px solid #cbd5e1;border-radius:10px;padding:10px;font-size:14px}
@@ -70,11 +76,14 @@ h2{font-size:30px;margin:0 0 26px;text-align:center}
 .small{color:#64748b;text-align:right}
 
 @media (max-width: 900px){
+  .site-header .nav{flex-direction:column;align-items:stretch;gap:0}
   .cards{grid-template-columns:1fr 1fr}
   .split{grid-template-columns:1fr}
   .about{grid-template-columns:1fr}
   nav{display:none}
   .hamburger{display:block}
+  #menu-toggle:checked ~ .nav-links{display:flex;flex-direction:column;position:absolute;top:64px;right:20px;background:#ffffff;border:1px solid #eef2f7;border-radius:12px;padding:12px;box-shadow:0 10px 24px rgba(15,23,42,.06)}
+  #menu-toggle:checked ~ .nav-links a{margin:6px 0}
 }
 
 @media (max-width: 600px){
