@@ -18,13 +18,16 @@ img{max-width:100%;display:block}
 .container{max-width:1120px;margin:0 auto;padding:0 20px}
 
 .site-header{position:sticky;top:0;background:rgba(255,255,255,.9);backdrop-filter:saturate(140%) blur(6px);border-bottom:1px solid #eef2f7;z-index:1000}
-.site-header .nav{display:flex;align-items:center;justify-content:space-between;height:208px;position:relative;gap:20px}
+.site-header .nav{display:flex;align-items:center;justify-content:space-between;height:208px;position:relative}
 .brand{display:flex;align-items:center;gap:10px;font-weight:700}
 .logo{width:28px;height:28px}
 
 .nav-col{display:flex;align-items:center}
 .brand-col{flex:1}
 .menu-col{flex:1;justify-content:flex-end;position:relative}
+.nav-inline{margin-left:-5px;padding-left:2px}
+.container--narrow{max-width:776px}
+.about-intro{margin-right:200px}
 
 nav a{margin:0 12px;font-weight:600;color:#0f172a}
 .btn{display:inline-block;background:linear-gradient(135deg,var(--brand1),var(--brand2));color:white;padding:12px 18px;border-radius:10px;font-weight:700;box-shadow:0 6px 18px rgba(79,70,229,.25);transition:transform .12s ease}
