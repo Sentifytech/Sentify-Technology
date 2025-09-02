@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Sentify — Digital Marketing & AI Chatbots</title>
-  <meta name="description" content="AI-powered digital marketing and chatbot solutions. Estonia ↔ GCC bridge: UAE, Saudi Arabia, Bahrain, Qatar."/>
+  <meta name="description" content="AI-powered digital marketing and chatbot solutions. Estonia ↔ GCC bridge: UAE, Saudi Arabia, Bahrain, Qatar.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -26,6 +26,248 @@
       }
     })();
   </script>
+  <style>
+    /* Professional Touches */
+    html, body {
+      font-family: 'Inter', Arial, sans-serif;
+      background: #f8f9fb;
+      color: #1a2236;
+      scroll-behavior: smooth;
+    }
+    h1, h2, h3 {
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #101626;
+    }
+    .btn, .btn--sm, .btn--ghost {
+      border-radius: 32px;
+      font-weight: 700;
+      transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 12px 0 rgba(44,55,130,.07);
+    }
+    .btn:hover, .btn:focus {
+      background: #101626;
+      color: #fff;
+      box-shadow: 0 4px 24px 0 rgba(44,55,130,0.15);
+      outline: none;
+    }
+    .card, .panel, .form, .chatbot-widget-popup {
+      border-radius: 20px;
+      box-shadow: 0 2px 20px 0 rgba(44,55,130,0.06);
+      background: #fff;
+    }
+    .card {
+      min-height: 200px;
+      padding: 2rem 1.5rem;
+      transition: box-shadow 0.2s;
+    }
+    .card:hover {
+      box-shadow: 0 8px 32px 0 rgba(44,55,130,0.14);
+    }
+    .checks li::before {
+      content: "✔";
+      color: #0093f9;
+      font-weight: bold;
+      margin-right: 0.5em;
+    }
+    .section {
+      margin-bottom: 3rem;
+      padding-top: 2.5rem;
+    }
+    .section--alt {
+      background: #f2f6fa;
+    }
+    .site-header, .site-footer {
+      background: #fff;
+      box-shadow: 0 1px 16px 0 rgba(44,55,130,0.07);
+    }
+    .site-footer .small {
+      color: #6c7d92;
+      margin-top: 0.5rem;
+    }
+    .nav-links a, .links a {
+      font-weight: 600;
+      text-decoration: none;
+      color: #1a2236;
+      padding: 0.5em 1em;
+      border-radius: 16px;
+      transition: background 0.15s, color 0.15s;
+    }
+    .nav-links a:hover, .links a:hover {
+      background: #0093f9;
+      color: #fff;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .nav, .footer-grid, .grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .grid.cards {
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .grid.split {
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+    .about {
+      gap: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .panel {
+      padding: 1.5rem;
+      min-width: 270px;
+      max-width: 370px;
+    }
+    .center {
+      text-align: center;
+    }
+    .note {
+      color: #6c7d92;
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+    .form {
+      background: #fff;
+      padding: 1.5rem;
+      margin-top: 0.5rem;
+      box-shadow: 0 2px 12px 0 rgba(44,55,130,0.07);
+    }
+    .form input, .form textarea {
+      border-radius: 8px;
+      border: 1px solid #e1e7ef;
+      padding: 0.75em;
+      font-size: 1em;
+      margin-top: 0.25rem;
+      margin-bottom: 1rem;
+      width: 100%;
+      box-sizing: border-box;
+      transition: border 0.2s;
+    }
+    .form input:focus, .form textarea:focus {
+      border-color: #0093f9;
+      outline: none;
+    }
+    /* Chatbot Widget Styles */
+    .chatbot-widget-fab {
+      position: fixed;
+      left: 2.2rem;
+      bottom: 2.2rem;
+      z-index: 9999;
+      background: #0093f9;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      box-shadow: 0 4px 32px 0 rgba(44,55,130,0.17);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: box-shadow 0.2s, background 0.2s;
+      border: none;
+      outline: none;
+    }
+    .chatbot-widget-fab:hover, .chatbot-widget-fab:focus {
+      background: #005fa3;
+      box-shadow: 0 8px 32px 0 rgba(44,55,130,0.25);
+    }
+    .chatbot-widget-fab img, .chatbot-widget-fab svg {
+      width: 38px;
+      height: 38px;
+      display: block;
+      border-radius: 50%;
+      background: #fff;
+      box-shadow: 0 2px 10px rgba(44,55,130,0.08);
+    }
+    .chatbot-widget-popup {
+      position: fixed;
+      left: 1.5rem;
+      bottom: 5.2rem;
+      width: 340px;
+      max-width: 96vw;
+      min-height: 410px;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 8px 32px 0 rgba(44,55,130,0.22);
+      z-index: 9999;
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      animation: chatbot-slide-in 0.23s cubic-bezier(.59,.33,.46,1.34);
+    }
+    @keyframes chatbot-slide-in {
+      from { transform: translateY(40px) scale(0.96); opacity: 0; }
+      to   { transform: translateY(0) scale(1); opacity: 1; }
+    }
+    .chatbot-widget-popup.open {
+      display: flex;
+    }
+    .chatbot-widget-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #0093f9;
+      color: #fff;
+      padding: 0.9rem 1.1rem;
+      font-weight: 700;
+      font-size: 1.08rem;
+    }
+    .chatbot-widget-header .close-btn {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 1.7em;
+      cursor: pointer;
+      line-height: 1;
+      margin-left: 0.25em;
+      padding: 0;
+      transition: color 0.2s;
+    }
+    .chatbot-widget-header .close-btn:hover {
+      color: #101626;
+    }
+    .chatbot-embed-widget {
+      flex: 1;
+      min-height: 340px;
+      background: #f2f6fa;
+      padding: 0.5rem 0.5rem 0 0.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: stretch;
+    }
+    .chatbot-widget-fab[aria-expanded="true"] {
+      box-shadow: 0 8px 32px 0 rgba(44,55,130,0.28), 0 0 0 8px #0093f91a;
+    }
+    /* Hide the demo chatbot in About section on desktop if widget is enabled */
+    @media (min-width: 800px) {
+      .panel .chatbot-embed { display: none !important; }
+    }
+    /* Responsive */
+    @media (max-width: 700px) {
+      .chatbot-widget-popup, .panel {
+        min-width: 0;
+        width: 98vw;
+        left: 1vw;
+        right: 1vw;
+        max-width: 99vw;
+      }
+      .chatbot-widget-fab {
+        left: 1.1rem;
+        bottom: 1.1rem;
+        width: 54px;
+        height: 54px;
+      }
+      .chatbot-widget-popup {
+        bottom: 4.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <!-- Site Header / Navigation -->
@@ -78,17 +320,14 @@
         <h2>What we do</h2>
         <div class="grid cards" role="list">
           <article class="card" role="listitem">
-            <!-- Removed invalid Marketing Icon image -->
             <h3>Digital Marketing</h3>
             <p>Performance campaigns, SEO, and social growth tailored for GCC audiences. From strategy to execution.</p>
           </article>
           <article class="card" role="listitem">
-            <!-- Removed invalid Chatbot Icon image -->
             <h3>AI Chatbots</h3>
             <p>Deploy Sentifyd.io chatbots to convert visitors, automate support, and scale conversations 24/7.</p>
           </article>
           <article class="card" role="listitem">
-            <!-- Removed invalid Bridge Icon image -->
             <h3>Market Entry</h3>
             <p>Partner scouting, localization, and go-to-market for Estonia → UAE, Saudi Arabia, Bahrain, Qatar.</p>
           </article>
@@ -120,7 +359,7 @@
       </div>
     </section>
 
-    <!-- About Section with Chatbot Demo -->
+    <!-- About Section with Chatbot Demo (hidden on desktop if widget is loaded) -->
     <section id="about" class="section">
       <div class="container">
         <div class="grid about">
@@ -135,7 +374,7 @@
           <div class="panel">
             <h3>Live Chatbot Demo</h3>
             <p>Chat with our Ahmad Hussein avatar:</p>
-            <!-- Sentifyd chatbot with Ahmad Hussein avatar -->
+            <!-- Sentifyd chatbot with Ahmad Hussein avatar (hidden on desktop if widget is loaded) -->
             <div class="chatbot-embed" aria-label="Chatbot Demo">
               <sentifyd-bot
                 api_key="36ebbcf7-c3ae-493f-a77a-5b8a51ed5033"
@@ -205,6 +444,88 @@
   <!-- Copyright year script -->
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Floating Chatbot Widget: only loads on production domain -->
+  <div id="chatbot-widget-root" aria-live="polite"></div>
+  <script>
+    (function () {
+      var allowed = ['sentifytech.com','www.sentifytech.com'];
+      var host = location.hostname;
+      var isAllowed = allowed.some(function(d){ return host===d || host.endsWith('.'+d); });
+      if (!isAllowed) return; // don't load widget on preview
+
+      var root = document.getElementById('chatbot-widget-root');
+      // Create floating action button
+      var fab = document.createElement('button');
+      fab.className = 'chatbot-widget-fab';
+      fab.setAttribute('aria-label', 'Open chat support');
+      fab.setAttribute('aria-expanded', 'false');
+      fab.innerHTML = `<svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="24" fill="#fff"/><ellipse cx="24" cy="22.5" rx="12" ry="8.5" fill="#0093f9"/><ellipse cx="19" cy="21" rx="2" ry="2.2" fill="#fff"/><ellipse cx="29" cy="21" rx="2" ry="2.2" fill="#fff"/><ellipse cx="24" cy="27" rx="4.5" ry="2.3" fill="#fff"/></svg>`;
+      root.appendChild(fab);
+
+      // Create popup container
+      var popup = document.createElement('div');
+      popup.className = 'chatbot-widget-popup';
+      popup.setAttribute('role','dialog');
+      popup.setAttribute('aria-modal','true');
+      popup.setAttribute('aria-label','Chat support');
+      popup.innerHTML = `
+        <div class="chatbot-widget-header">
+          <span>Chat with Sentify</span>
+          <button class="close-btn" aria-label="Close chat">&times;</button>
+        </div>
+        <div class="chatbot-embed-widget">
+          <sentifyd-bot
+            api_key="36ebbcf7-c3ae-493f-a77a-5b8a51ed5033"
+            avatar_id="51"
+            toggler="false">
+          </sentifyd-bot>
+          <div class="chatbot-fallback" style="text-align:center;font-size:.99em;color:#6c7d92;margin-top:1em;">Chatbot is disabled in this preview. It will load on sentifytech.com.</div>
+        </div>
+      `;
+      root.appendChild(popup);
+
+      // Widget logic
+      function openChat() {
+        popup.classList.add('open');
+        fab.setAttribute('aria-expanded','true');
+        // Optionally focus the close btn for accessibility
+        popup.querySelector('.close-btn').focus();
+      }
+      function closeChat() {
+        popup.classList.remove('open');
+        fab.setAttribute('aria-expanded','false');
+        fab.focus();
+      }
+      fab.addEventListener('click', function() {
+        if (popup.classList.contains('open')) {
+          closeChat();
+        } else {
+          openChat();
+        }
+      });
+      // Keyboard accessibility
+      fab.addEventListener('keydown', function(e){
+        if (e.key==='Enter' || e.key===' ') {
+          fab.click();
+        }
+      });
+      popup.querySelector('.close-btn').addEventListener('click', closeChat);
+      popup.querySelector('.close-btn').addEventListener('keydown', function(e){
+        if (e.key==='Escape' || e.key==='Enter' || e.key===' ') closeChat();
+      });
+      // Close on outside click
+      document.addEventListener('mousedown', function(e){
+        if (popup.classList.contains('open') && !popup.contains(e.target) && !fab.contains(e.target)) {
+          closeChat();
+        }
+      });
+      // ESC closes
+      document.addEventListener('keydown', function(e){
+        if (e.key==='Escape' && popup.classList.contains('open')) closeChat();
+      });
+    })();
   </script>
 </body>
 </html>
