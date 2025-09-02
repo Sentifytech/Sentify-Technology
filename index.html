@@ -1,66 +1,210 @@
-<!-- ...existing code up to About section... -->
-<!-- About Section with Chatbot Demo -->
-<section id="about" class="section">
-  <div class="container">
-    <div class="grid about">
-      <div>
-        <h2>Why Sentify</h2>
-        <ul class="checks">
-          <li>Estonia ↔ GCC focus with boots-on-the-ground partners</li>
-          <li>Full-funnel marketing + AI automation</li>
-          <li>Fast deployment, measurable results</li>
-        </ul>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sentify — Digital Marketing & AI Chatbots</title>
+  <meta name="description" content="AI-powered digital marketing and chatbot solutions. Estonia ↔ GCC bridge: UAE, Saudi Arabia, Bahrain, Qatar."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <!-- Sentifyd chatbot script (conditionally loaded in non-preview environments) -->
+  <script>
+    (function(){
+      var allowed = ['sentifytech.com','www.sentifytech.com'];
+      var host = location.hostname;
+      var isAllowed = allowed.some(function(d){ return host===d || host.endsWith('.'+d); });
+      if (isAllowed) {
+        var s = document.createElement('script');
+        s.type = 'module';
+        s.src = 'https://frontend.sentifyd.io/sentifyd-bot/main.js';
+        document.head.appendChild(s);
+      } else {
+        document.documentElement.setAttribute('data-chatbot-disabled','true');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <!-- Site Header / Navigation -->
+  <header class="site-header">
+    <div class="container nav" role="navigation" aria-label="Main Navigation">
+      <div class="nav-col brand-col">
+        <a href="#hero" class="brand" aria-label="Sentifytech Home">
+          <img src="https://cdn.builder.io/api/v1/image/assets%2F6636a5b3149c4ea7ad06f2b6a081d57d%2Fe7e891efa9844e9d974455a8bf1b24bd" alt="Sentify Technology Logo" width="200" loading="lazy">
+        </a>
       </div>
-      <div class="panel">
-        <h3>Live Chatbot Demo</h3>
-        <p>Chat with our Ahmad Hussein avatar:</p>
-        <!-- Removed inline chatbot demo: now the bot floats as site-wide support -->
-        <div class="chatbot-fallback">Chat support is now available in the bottom corner of the site.</div>
+      <div class="nav-col menu-col">
+        <input type="checkbox" id="menu-toggle" class="menu-toggle" aria-label="Open Menu">
+        <label for="menu-toggle" class="hamburger" aria-label="Open Menu" tabindex="0" role="button" aria-controls="main-menu">☰</label>
+        <nav id="main-menu" class="nav-links">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#partners">Our Story</a>
+          <a href="#contact" class="btn btn--sm">Contact</a>
+        </nav>
       </div>
     </div>
-  </div>
-</section>
-<!-- ...existing code... -->
+  </header>
 
-<!-- Site Footer -->
-<footer class="site-footer">
-  <div class="container footer-grid">
-    <a href="#hero" class="brand" aria-label="Sentifytech Home">
-      <img src="https://cdn.builder.io/api/v1/image/assets%2F6636a5b3149c4ea7ad06f2b6a081d57d%2Fe7e891efa9844e9d974455a8bf1b24bd" alt="Sentify Technology Logo" width="200" loading="lazy">
-    </a>
-    <div class="links" aria-label="Footer Links">
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#partners">Our Story</a>
-      <a href="#contact">Contact</a>
+  <!-- Hero Section -->
+  <main>
+    <section class="hero" id="hero">
+      <div class="container">
+        <h1>
+          AI-Powered Digital Marketing<br />
+          <span class="accent">that opens GCC markets</span>
+        </h1>
+        <p class="lede">
+          We help Estonian companies grow in the UAE, Saudi Arabia, Bahrain, and Qatar with high-performance marketing and AI chatbots.
+        </p>
+        <div class="cta">
+          <a href="#contact" class="btn">Talk to Us</a>
+          <a href="#services" class="btn btn--ghost">See Services</a>
+        </div>
+        <div class="badges" aria-label="Core competencies">
+          <span>Estonia → GCC Bridge</span>
+          <span>Digital Marketing</span>
+          <span>AI Chatbots</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+      <div class="container">
+        <h2>What we do</h2>
+        <div class="grid cards" role="list">
+          <article class="card" role="listitem">
+            <!-- Removed invalid Marketing Icon image -->
+            <h3>Digital Marketing</h3>
+            <p>Performance campaigns, SEO, and social growth tailored for GCC audiences. From strategy to execution.</p>
+          </article>
+          <article class="card" role="listitem">
+            <!-- Removed invalid Chatbot Icon image -->
+            <h3>AI Chatbots</h3>
+            <p>Deploy Sentifyd.io chatbots to convert visitors, automate support, and scale conversations 24/7.</p>
+          </article>
+          <article class="card" role="listitem">
+            <!-- Removed invalid Bridge Icon image -->
+            <h3>Market Entry</h3>
+            <p>Partner scouting, localization, and go-to-market for Estonia → UAE, Saudi Arabia, Bahrain, Qatar.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section id="partners" class="section section--alt">
+      <div class="container">
+        <h2>Two teams. One mission.</h2>
+        <div class="grid split">
+          <div>
+            <h3>
+              <a href="https://reachplusbh.com/index.html" target="_blank" rel="noopener">Reach Plus Media</a>
+            </h3>
+            <p>Digital marketing specialists with regional know-how and execution in the GCC.</p>
+          </div>
+          <div>
+            <h3>
+              <a href="https://sentifyd.io" target="_blank" rel="noopener">Sentifyd.io</a>
+            </h3>
+            <p>AI chatbot technology powering instant, multilingual customer conversations.</p>
+          </div>
+        </div>
+        <p class="center note">
+          Together as <strong>Sentify Technology OÜ</strong> in Estonia to boost exports and growth.
+        </p>
+      </div>
+    </section>
+
+    <!-- About Section with Chatbot Demo -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="grid about">
+          <div>
+            <h2>Why Sentify</h2>
+            <ul class="checks">
+              <li>Estonia ↔ GCC focus with boots-on-the-ground partners</li>
+              <li>Full-funnel marketing + AI automation</li>
+              <li>Fast deployment, measurable results</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h3>Live Chatbot Demo</h3>
+            <p>Chat with our Ahmad Hussein avatar:</p>
+            <!-- Sentifyd chatbot with Ahmad Hussein avatar -->
+            <div class="chatbot-embed" aria-label="Chatbot Demo">
+              <sentifyd-bot
+                api_key="36ebbcf7-c3ae-493f-a77a-5b8a51ed5033"
+                avatar_id="51"
+                toggler="false">
+              </sentifyd-bot>
+              <div class="chatbot-fallback">Chatbot is disabled in this preview. It will load on sentifytech.com.</div>
+              <noscript>
+                <p>Chatbot requires JavaScript to run.</p>
+              </noscript>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section section--alt">
+      <div class="container">
+        <h2>Contact</h2>
+        <div class="grid split">
+          <div>
+            <p>
+              <strong>Email:</strong>
+              <a href="mailto:info@sentifytech.com">info@sentifytech.com</a>
+            </p>
+            <p><strong>Based in:</strong> Tallinn, Estonia</p>
+            <p><strong>Serving:</strong> Estonia, UAE, Saudi Arabia, Bahrain, Qatar</p>
+          </div>
+          <form class="form" name="contact" method="POST" data-netlify="true" autocomplete="on">
+            <input type="hidden" name="form-name" value="contact">
+            <label for="fullname">Full name
+              <input type="text" id="fullname" name="name" required autocomplete="name">
+            </label>
+            <label for="email">Email
+              <input type="email" id="email" name="email" required autocomplete="email">
+            </label>
+            <label for="message">Message
+              <textarea id="message" name="message" rows="4" required autocomplete="on"></textarea>
+            </label>
+            <button class="btn" type="submit">Send</button>
+            <p class="form-hint">This form is Netlify-ready. Submissions will appear in your Netlify dashboard.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <a href="#hero" class="brand" aria-label="Sentifytech Home">
+        <img src="https://cdn.builder.io/api/v1/image/assets%2F6636a5b3149c4ea7ad06f2b6a081d57d%2Fe7e891efa9844e9d974455a8bf1b24bd" alt="Sentify Technology Logo" width="200" loading="lazy">
+      </a>
+      <div class="links" aria-label="Footer Links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#partners">Our Story</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="small">
+        © <span id="y"></span> Sentify Technology OÜ
+      </div>
     </div>
-    <div class="small">
-      © <span id="y"></span> Sentify Technology OÜ
-    </div>
-  </div>
-</footer>
+  </footer>
 
-<!-- Copyright year script -->
-<script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-</script>
-
-<!-- Sentifyd.io floating chatbot widget script -->
-<script>
-  (function(){
-    var allowed = ['sentifytech.com','www.sentifytech.com'];
-    var host = location.hostname;
-    var isAllowed = allowed.some(function(d){ return host===d || host.endsWith('.'+d); });
-    if (isAllowed) {
-      var s = document.createElement('script');
-      s.type = 'module';
-      // Widget mode for floating chat: sentifyd-bot will appear as a support bubble in the corner
-      s.src = 'https://frontend.sentifyd.io/sentifyd-bot/widget.js?api_key=36ebbcf7-c3ae-493f-a77a-5b8a51ed5033&avatar_id=51';
-      document.body.appendChild(s);
-    } else {
-      document.documentElement.setAttribute('data-chatbot-disabled','true');
-    }
-  })();
-</script>
+  <!-- Copyright year script -->
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
