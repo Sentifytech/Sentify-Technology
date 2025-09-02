@@ -21,6 +21,7 @@ img{max-width:100%;display:block}
 .site-header .nav{display:flex;align-items:center;justify-content:space-between;height:64px;position:relative;gap:20px}
 .brand{display:flex;align-items:center;gap:10px;font-weight:700}
 .logo{width:28px;height:28px}
+.brand img{width:160px;height:auto}
 
 .nav-col{display:flex;align-items:center}
 .brand-col{flex:1}
@@ -115,4 +116,5 @@ h2{font-size:30px;margin:0 0 26px;text-align:center}
   .capabilities .features{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr;gap:12px}
   .small{text-align:left}
+  .brand img{width:140px}
 }
